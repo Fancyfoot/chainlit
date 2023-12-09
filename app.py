@@ -18,10 +18,10 @@ from langchain.memory import ChatMessageHistory, ConversationBufferMemory
 
 import chainlit as cl
 
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = "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"
 
 text_splitter = RecursiveCharacterTextSplitter(
-    chunk_size=1000, chunk_overlap=100)
+    chunk_size=1000, chunk_overlap=10)
 
 
 @cl.on_chat_start
@@ -70,7 +70,7 @@ async def on_chat_start():
 
     # Create a chain that uses the Chroma vector store
     chain = ConversationalRetrievalChain.from_llm(
-        ChatOpenAI(model_name="gpt-4-1106-preview",
+        ChatOpenAI(model_name="ft:gpt-3.5-turbo-0613:wessini:legalgpt:85wujaLf",
                    temperature=0, streaming=True),
         chain_type="stuff",
         retriever=docsearch.as_retriever(),

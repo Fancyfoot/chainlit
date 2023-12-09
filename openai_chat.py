@@ -4,11 +4,11 @@ import chainlit as cl
 
 
 client = AsyncOpenAI(
-    api_key="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")
+    api_key="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")
 
 
 settings = {
-    "model": "gpt-4-vision-preview",
+    "model": "gpt-4-1106-preview",
     "temperature": 0.7,
     "max_tokens": 500,
     "top_p": 1,
